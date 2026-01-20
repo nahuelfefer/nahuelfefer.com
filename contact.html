@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- VERSION: JAN17-MOBILE-FIXED-V2 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Nahuel S. Fefer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Header matching landing page */
+        .header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-left h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+            font-weight: normal;
+            letter-spacing: 0.5px;
+        }
+
+        .header-left p {
+            font-size: 1.05rem;
+            color: var(--white);
+            font-style: italic;
+        }
+
+        nav {
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--white);
+        }
+
+        /* Contact Title Section */
+        .contact-title {
+            padding: 3rem 2rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .contact-title h1 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            font-family: 'Georgia', serif;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 1.5rem 1rem;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .header-left h1 {
+                font-size: 2rem;
+            }
+
+            .header-left p {
+                font-size: 0.95rem;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: flex-start;
+            }
+
+            .nav-menu a {
+                font-size: 0.95rem;
+            }
+
+            .contact-title h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-left h1 {
+                font-size: 1.6rem;
+            }
+
+            .nav-menu {
+                gap: 0.75rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Contact Hero */
+        .contact-hero {
+            background: var(--navy);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            color: var(--white);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact-section {
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            border: none;
+            display: block;
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-link {
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .action-section {
+            background: var(--light-gray);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--navy);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <h1>NAHUEL S. FEFER</h1>
+            <p>Attorney / Professor / Public Servant</p>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Content -->
+    <div class="contact-content">
+        <div class="contact-section" style="max-width: 800px; margin: 0 auto; padding: 2.5rem;">
+            <h2 style="color: var(--navy); margin-bottom: 1rem; font-size: 2rem; text-align: center;">Let's Connect!</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; text-align: left;">
+                I love meeting people working towards a better world and sharing insights and lessons learned from my work. Whether you have questions about my research, are interested in working together on structural reforms, need help drafting legislation, want to collaborate on an academic project, or have other inquiries (legal work, consulting opportunities, media requests, etc.) please e-mail me directly at <a href="mailto:nahuel.s.fefer@gmail.com" style="color: var(--navy); font-weight: 600; text-decoration: underline;">nahuel.s.fefer@gmail.com</a>.
+            </p>
+        </div>
+
+        <div class="contact-section" style="text-align: center; margin-top: 3rem;">
+            <h2 style="color: var(--navy); margin-bottom: 1rem; font-size: 2rem;">Subscribe for Updates</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 0 auto 2rem;">
+                Sign up here to get notified when I publish new writing:
+            </p>
+            <div style="display: flex; justify-content: center;">
+                <iframe src="https://nahuelfefer.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </div>
+
+                <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Site Map</h3>
+                <div class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="work.html">Work</a>
+                    <a href="media.html">Media</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="footer-contact">
+                    <p>Email: <a href="mailto:nahuel.s.fefer@gmail.com">nahuel.s.fefer@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nahuel S. Fefer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

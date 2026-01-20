@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- VERSION: JAN17-MOBILE-FIXED-V2 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Nahuel S. Fefer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Header matching landing page */
+        .header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-left h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+            font-weight: normal;
+            letter-spacing: 0.5px;
+        }
+
+        .header-left p {
+            font-size: 1.05rem;
+            color: var(--white);
+            font-style: italic;
+        }
+
+        nav {
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--white);
+        }
+
+        /* Blog Title Section */
+        .blog-title {
+            background: var(--navy);
+            padding: 2rem 2rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .blog-title h1 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin: 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 1.5rem 1rem;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .header-left h1 {
+                font-size: 2rem;
+            }
+
+            .header-left p {
+                font-size: 0.95rem;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: flex-start;
+            }
+
+            .nav-menu a {
+                font-size: 0.95rem;
+            }
+
+            .blog-title h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-left h1 {
+                font-size: 1.6rem;
+            }
+
+            .nav-menu {
+                gap: 0.75rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Blog Hero */
+        .blog-hero {
+            background: var(--navy);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .blog-hero p {
+            font-size: 1.2rem;
+            color: var(--white);
+        }
+        .blog-post {
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .blog-post h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            border: none;
+            display: block;
+            text-align: left;
+        }
+
+        .blog-post h2 a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-post h2 a:hover {
+            color: var(--secondary);
+        }
+
+        .post-meta {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .post-excerpt {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <h1>NAHUEL S. FEFER</h1>
+            <p>Attorney / Professor / Public Servant</p>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Blog Title -->
+    <div class="blog-title">
+        <h1>Legislative Dreams</h1>
+    </div>
+
+    <!-- Blog Posts -->
+    <section class="content" style="background: var(--light-gray); padding: 3rem 2rem;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <!-- Blog Post 1 -->
+            <article class="blog-post">
+                <h2><a href="https://nahuelfefer.substack.com/p/why-im-writing-in-2026" target="_blank">Why I'm Writing in 2026</a></h2>
+                <div class="post-meta">January 2026 | Originally published on Substack</div>
+                <p class="post-excerpt">
+                    To be honest, asking people to read my writing in this day and age feels insane. There’s too much going on in the world, and I don’t want to be screaming into the void. I don’t want to contribute to the flood of information and misinformation that’s drowning democracy, dividing communities, and eroding our collective memory. But here’s the thing: if the sane stay silent because sharing feels absurd, our information ecosystem will continue to disintegrate. My hope is that at worst, my writing will do no harm, and that at best it may contribute to some progress.
+                </p>
+                <a href="https://nahuelfefer.substack.com/p/why-im-writing-in-2026" target="_blank" class="read-more">Read on Substack →</a>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-post">
+                <h2><a href="https://nahuel-s-fefer.medium.com/why-im-voting-for-tishaura-jones-10f005435a1d" target="_blank">Why I'm Voting for Tishaura Jones</a></h2>
+                <div class="post-meta">Originally published on Medium | Elections & Governance</div>
+                <p class="post-excerpt">
+                    My endorsement of Tishaura Jones for Mayor of St. Louis, based on her track record as City Treasurer, 
+                    her policy positions on economic justice and community development, and her vision for a more equitable 
+                    and prosperous St. Louis.
+                </p>
+                <a href="https://nahuel-s-fefer.medium.com/why-im-voting-for-tishaura-jones-10f005435a1d" target="_blank" class="read-more">Read on Medium →</a>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-post">
+                <h2><a href="https://medium.com/@nahuelfefer/alternatives-to-the-earnings-tax-are-not-fiscally-sufficient-politically-feasible-or-economically-41bc5f9e08a0" target="_blank">Alternatives to the Earnings Tax Are Not Fiscally Sufficient, Politically Feasible, or Economically Desirable</a></h2>
+                <div class="post-meta">Originally published on Medium | Municipal Finance</div>
+                <p class="post-excerpt">
+                    A comprehensive analysis of proposed alternatives to St. Louis' earnings tax, examining their fiscal 
+                    viability, political feasibility, and economic implications. This piece explains why the earnings tax 
+                    remains the most equitable and sustainable funding mechanism for municipal services.
+                </p>
+                <a href="https://medium.com/@nahuelfefer/alternatives-to-the-earnings-tax-are-not-fiscally-sufficient-politically-feasible-or-economically-41bc5f9e08a0" target="_blank" class="read-more">Read on Medium →</a>
+            </article>
+        </div>
+    </section>
+
+                <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Site Map</h3>
+                <div class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="work.html">Work</a>
+                    <a href="media.html">Media</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="footer-contact">
+                    <p>Email: <a href="mailto:nahuel.s.fefer@gmail.com">nahuel.s.fefer@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nahuel S. Fefer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

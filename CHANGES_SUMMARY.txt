@@ -1,0 +1,95 @@
+# Website Updates Summary
+
+## Changes Completed
+
+### 1. ✅ Fixed Email Button in About Page
+- Changed from broken CloudFlare email protection link to direct mailto: link
+- Updated: `about.html` line 144
+- Now links to: `mailto:nahuel@nahuelfefer.com`
+
+### 2. ✅ Added New Card to Work Page - Reports & Memos
+- **Title:** Framework for an Equitable Recovery
+- **Date:** April 2021
+- **Description:** Jones Transition Team plans for deployment of $500M in ARPA funds. Most, though not all, of these proposals were ultimately implemented.
+- **Link:** equitable-recovery-framework.html (embedded PDF page)
+- **Image:** https://lh3.googleusercontent.com/d/1jF0kHGY_gpLbt-0l4FvwtQBS2YW4S4-5
+- **Position:** Chronologically placed between August 2021 and February 2017 entries
+
+### 3. ✅ Overhauled Website Structure - Created Standalone PDF Pages
+Created 22 new HTML pages with embedded PDFs, each with:
+- Full site header and navigation
+- PDF embedded in iframe with Google Drive preview URL
+- Download button linking to original Google Drive file
+- Full site footer
+
+**New PDF Pages Created:**
+1. 20-million-investment.html
+2. arpa-housing-71916.html
+3. better-together-taxes.html
+4. better-together.html
+5. cda-impact-report.html
+6. charter-reform.html
+7. community-development-law-syllabus.html
+8. condorcet.html
+9. cv.html
+10. democratic-republic.html
+11. economic-justice-action-plan.html
+12. equitable-recovery-framework.html
+13. equitable-unification.html
+14. investments-map.html ← **New for landing page map**
+15. new-tax-break-rules.html
+16. nyc-property-tax-reform.html
+17. parking-reforms.html
+18. resume.html
+19. shaking-up-incentives.html
+20. state-local-tax-law-syllabus.html
+21. stl-merger-consideration.html
+22. tax-incentive-reform-72238.html
+
+**Updated Links Across Site:**
+- index.html: Updated all Google Drive links to internal pages
+- work.html: Updated all Google Drive links to internal pages
+- about.html: Updated Resume and CV links to internal pages
+- media.html: Updated all Google Drive links to internal pages
+
+### 4. ✅ Redesigned Landing Page Impact Section
+**New Layout:**
+- Three-column grid layout
+- Left: Community playground photo (slightly smaller)
+- Center: "Impact" heading, subtitle, and two buttons stacked vertically
+- Right: Investments map image (clickable, same height as left image)
+
+**Updated Content:**
+- Subtitle changed from "Investing $250M+ into Neighborhoods & Housing" to "Investing in Neighborhoods and Housing"
+- Map image links to new investments-map.html page with embedded PDF
+- Both buttons now link to internal pages (removed target="_blank")
+
+**CSS Updates:**
+- Changed from 2-column to 3-column grid (1fr 1fr 1fr)
+- Centered text alignment for middle column
+- Buttons now stack vertically with full width in center column
+- Responsive design maintained (collapses to single column on mobile)
+
+## Files Modified
+1. about.html - Fixed email button
+2. work.html - Added new card, updated links
+3. index.html - Redesigned Impact section, updated all links
+4. media.html - Updated all Google Drive links
+5. styles.css - No changes needed (inline styles used)
+
+## Files Created
+22 new HTML pages for PDF embeds (listed above)
+
+## Testing Recommendations
+1. Test all internal links navigate correctly
+2. Test PDF embeds load properly in all browsers
+3. Test responsive design on mobile devices
+4. Verify email button opens mail client
+5. Test that all external links (non-PDF) still open in new tabs
+
+## Notes
+- All PDF pages use Google Drive preview URL format: /file/d/{ID}/preview
+- Download buttons link to original view URLs: /file/d/{ID}/view
+- Maintained consistent header/footer across all new pages
+- Removed target="_blank" only from internal links (PDF pages)
+- External links (news articles, etc.) retain target="_blank"
