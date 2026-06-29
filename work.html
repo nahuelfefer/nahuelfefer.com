@@ -87,6 +87,106 @@
             display: block;
         }
 
+        /* Teaching cards - course name + syllabus button */
+        .teaching-card .card-content {
+            align-items: flex-start;
+            gap: 1.25rem;
+        }
+
+        .teaching-card .card-title {
+            margin-bottom: 0;
+        }
+
+        .syllabus-button {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--gold);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid var(--navy);
+            margin-top: auto;
+        }
+
+        .syllabus-button:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Double button card (Presentations) */
+        .double-button-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .double-button-card .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .double-button-card .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .double-button-card .card-date {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .double-button-card .card-title {
+            color: var(--navy);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+            line-height: 1.3;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .mini-button {
+            flex: 1;
+            background: var(--navy);
+            color: var(--gold);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid var(--navy);
+        }
+
+        .mini-button:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             .work-grid {
@@ -123,6 +223,10 @@
                 font-size: 0.85rem;
                 padding: 0.75rem 0.25rem;
             }
+
+            .button-group {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -134,9 +238,10 @@
             <p>Attorney / Professor / Public Servant</p>
         </div>
         <nav>
-            <ul class="nav-menu">
+                        <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html">Bio</a></li>
+                <li><a href="fefer-law.html">Fefer Law</a></li>
                 <li><a href="work.html" class="active">Work</a></li>
                 <li><a href="media.html">Media</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -151,7 +256,7 @@
             <button class="tab-button active" data-tab="all">Reports & Memos</button>
             <button class="tab-button" data-tab="legislation">Legislation</button>
             <button class="tab-button" data-tab="teaching">Teaching</button>
-            <button class="tab-button" data-tab="essays">Essays</button>
+            <button class="tab-button" data-tab="presentations">Presentations</button>
         </div>
     </nav>
 
@@ -311,83 +416,119 @@
             </div>
         </div>
 
-        <!-- Teaching Only - DATE UPDATED TO FALL 2026 -->
+        <!-- Teaching Only - course name + syllabus button -->
         <div id="teaching" class="tab-content">
             <div class="work-grid">
-                <a href="community-development-law-syllabus.html" class="card">
+                <div class="card teaching-card">
                     <img src="https://lh3.googleusercontent.com/d/1JE6wes8KIY_tVXlER6YkV7KyfKUbK2S2" alt="Community Development Law" class="card-image">
                     <div class="card-content">
-                        <div class="card-date">Fall 2025</div>
                         <h3 class="card-title">Community Development Law</h3>
-                        <p class="card-description">Washington University School of Law - Course syllabus and materials</p>
-                        <div class="card-cta">View Syllabus →</div>
+                        <a href="community-development-law-syllabus.html" class="syllabus-button">View Syllabus</a>
                     </div>
-                </a>
+                </div>
 
-                <a href="state-local-tax-law-syllabus.html" class="card">
+                <div class="card teaching-card">
                     <img src="https://lh3.googleusercontent.com/d/1YNjyyw9td2dTg-LHvd_e_wdEdDloZJYU" alt="State & Local Tax Law" class="card-image">
                     <div class="card-content">
-                        <div class="card-date">Fall 2026</div>
-                        <h3 class="card-title">State & Local Tax Law</h3>
-                        <p class="card-description">Course syllabus and materials</p>
-                        <div class="card-cta">View Syllabus →</div>
+                        <h3 class="card-title">State &amp; Local Tax Law</h3>
+                        <a href="state-local-tax-law-syllabus.html" class="syllabus-button">View Syllabus</a>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
 
-        <!-- Essays Only -->
-        <div id="essays" class="tab-content">
+        <!-- Presentations Only -->
+        <div id="presentations" class="tab-content">
             <div class="work-grid">
-                <a href="https://www.theatlantic.com/magazine/2026/02/the-commons/685318/" class="card" target="_blank">
-                    <img src="https://lh3.googleusercontent.com/d/1vgFPHFOlT6v5RocHY4jScOoOFwV-ePai" alt="National Advisory Referendum" class="card-image">
+                <!-- Presentation 1: Double buttons (video + transcript) -->
+                <div class="double-button-card">
+                    <img src="https://lh3.googleusercontent.com/d/1BCrxzUQmXqUBU0nTt_59EcpFVjfB3pC9" alt="Board Recommendations" class="card-image">
                     <div class="card-content">
-                        <div class="card-date">January 2026</div>
-                        <h3 class="card-title">Revisiting the National Advisory Referendum</h3>
-                        <p class="card-description">A response to Jill Lepore's "How Originalism Killed The Constitution" making the case that national referenda can help drive overdue constitutional amendments.</p>
-                        <div class="card-cta">Read Essay →</div>
+                        <div class="card-date">November 2025</div>
+                        <h3 class="card-title">Recommendations to the Board of Aldermen</h3>
+                        <p class="card-description">A farewell speech to the Board of Aldermen featuring calls for tornado recovery, departmental consolidation, and the abolition of the Board of Estimate & Apportionment.</p>
+                        <div class="button-group">
+                            <a href="https://youtu.be/yK0SIEMOqsg?si=2x64lFyJrOs7D9TI&t=1095" class="mini-button" target="_blank">
+                                Watch Video
+                            </a>
+                            <a href="parking-reforms.html" class="mini-button">
+                                View Transcript
+                            </a>
+                        </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="democratic-republic.html" class="card">
-                    <img src="https://lh3.googleusercontent.com/d/1ZlUCVbtJ__81skPPskkU39TSMMvK_qWC" alt="Democratic Republic" class="card-image">
+                <!-- Presentation 2: Double buttons (video + slides) -->
+                <div class="double-button-card">
+                    <img src="https://lh3.googleusercontent.com/d/1v-Y9IXeG2fT_o-s43mOki3nfKYykqF4R" alt="ARPA Update" class="card-image">
                     <div class="card-content">
-                        <div class="card-date">December 2024</div>
-                        <h3 class="card-title">Reclaiming our Democratic-Republic</h3>
-                        <p class="card-description">An exploration of democratic theory and constitutional evolution in the United States</p>
-                        <div class="card-cta">Read Essay →</div>
+                        <div class="card-date">November 2025</div>
+                        <h3 class="card-title">CDA American Rescue Plan Act Update</h3>
+                        <p class="card-description">Comprehensive presentation on ARPA implementation and impact.</p>
+                        <div class="button-group">
+                            <a href="https://www.youtube.com/live/mkHbbaWEggw?si=AaSIr-Na6waGLW0z&t=11955" class="mini-button" target="_blank">
+                                Watch Video
+                            </a>
+                            <a href="tax-incentive-reform-72238.html" class="mini-button">
+                                View Slides
+                            </a>
+                        </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://www.gmfus.org/news/vouchers-ukraine-accelerating-affordable-housing-development" class="card" target="_blank">
-                    <img src="https://lh3.googleusercontent.com/d/1K-Nnw5jRo0rl6xMMegETaXX3sWdhNPm2" alt="Ukraine Vouchers" class="card-image">
+                <!-- Presentation 3: Double buttons (video + slides) -->
+                <div class="double-button-card">
+                    <img src="https://lh3.googleusercontent.com/d/1wyIGWcMEHwXVN029scfnv_YdR4tlyjjT" alt="Tornado Recovery" class="card-image">
                     <div class="card-content">
-                        <div class="card-date">November 2023</div>
-                        <h3 class="card-title">Vouchers for Ukraine: Accelerating Affordable Housing Development</h3>
-                        <p class="card-description">An analysis of how housing vouchers for internally displaced persons, veterans, spouses of fallen soldiers could provide a short term response to Ukraine's housing crisis.</p>
-                        <div class="card-cta">Read Essay →</div>
+                        <div class="card-date">September 2025</div>
+                        <h3 class="card-title">Tornado Housing Recovery Taskforce Update</h3>
+                        <p class="card-description">Report on housing recovery efforts and urgent needs in the wake of a devastating tornado.</p>
+                        <div class="button-group">
+                            <a href="https://www.youtube.com/live/bG9VboTR3Vk?si=V2qIj2uZzu6a9_7R&t=3180" class="mini-button" target="_blank">
+                                Watch Video
+                            </a>
+                            <a href="arpa-housing-71916.html" class="mini-button">
+                                View Slides
+                            </a>
+                        </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="condorcet.html" class="card">
-                    <img src="https://lh3.googleusercontent.com/d/1-HU4qB0f0eGG2CQrKoqgaeitsnsVXYZJ" alt="Condorcet" class="card-image">
+                <!-- Presentation 4: Double buttons (video + slides) -->
+                <div class="double-button-card">
+                    <img src="https://lh3.googleusercontent.com/d/1K7qPV6cNMAWuXnlsJrH_jyy0eWzF5ldZ" alt="Rams Fund" class="card-image">
                     <div class="card-content">
-                        <div class="card-date">May 2020</div>
-                        <h3 class="card-title">Condorcet & Constitutional Revolution</h3>
-                        <p class="card-description">An introduction to Condorcet's philosophy, his dialogue with the founding fathers, and how his ideas can help heal our nation's deep constitutional rot.</p>
-                        <div class="card-cta">Read Essay →</div>
+                        <div class="card-date">January 2025</div>
+                        <h3 class="card-title">Rams Housing & Neighborhood Development Fund Prospectus</h3>
+                        <p class="card-description">An innovative proposal to invest in construction, site assembly, pre-development, home repair, downpayment assistance and more in order to drive neighborhood transformation.</p>
+                        <div class="button-group">
+                            <a href="https://www.youtube.com/live/1WnhpnMQF5k?si=s_p9pxgUFXHStfOd&t=14257" class="mini-button" target="_blank">
+                                Watch Video
+                            </a>
+                            <a href="stl-merger-consideration.html" class="mini-button">
+                                View Slides
+                            </a>
+                        </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="better-together.html" class="card">
-                    <img src="https://lh3.googleusercontent.com/d/1Y5AwgDYwlkzCc16t4km41ZEaRKZo0Ai_" alt="Better Together" class="card-image">
+                <!-- Presentation 5: Double buttons (video + memo) -->
+                <div class="double-button-card">
+                    <img src="https://lh3.googleusercontent.com/d/12-tsJB1l6T-D2sLxZL2qoK3Z5tShvCdA" alt="Minimum Wage" class="card-image">
                     <div class="card-content">
-                        <div class="card-date">March 2019</div>
-                        <h3 class="card-title">Better Together Will Rip Us Apart</h3>
-                        <p class="card-description">Riverfront Times cover story explaining how the 2019 plan to merge City and County would have circumvented democracy and bankrupted St. Louis.</p>
-                        <div class="card-cta">Read Essay →</div>
+                        <div class="card-date">June 2015</div>
+                        <h3 class="card-title">Minimum Wage Whitepaper</h3>
+                        <p class="card-description">My first time testifying before the board of aldermen. I was asked to present my research into the proposed minimum wage hike with just ten minutes to prepare and did so to the best of my ability.</p>
+                        <div class="button-group">
+                            <a href="https://youtu.be/VT6sXPuPb0w?si=AAejztVLyvM7USVH&t=4820" class="mini-button" target="_blank">
+                                Watch Video
+                            </a>
+                            <a href="better-together-taxes.html" class="mini-button">
+                                View Memo
+                            </a>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
 
@@ -398,9 +539,10 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Site Map</h3>
-                <div class="footer-nav">
+                                <div class="footer-nav">
                     <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
+                    <a href="about.html">Bio</a>
+                    <a href="fefer-law.html">Fefer Law</a>
                     <a href="work.html">Work</a>
                     <a href="media.html">Media</a>
                     <a href="blog.html">Blog</a>
