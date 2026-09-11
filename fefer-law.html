@@ -5,108 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fefer Law - Nahuel S. Fefer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20512%20512%27%3E%3Crect%20width%3D%27512%27%20height%3D%27512%27%20fill%3D%27%231a3a52%27%2F%3E%3Ctext%20x%3D%27256%27%20y%3D%27308%27%20text-anchor%3D%27middle%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%27250%27%20fill%3D%27%23ffffff%27%3EF%3C%2Ftext%3E%3Cpolygon%20points%3D%27151%2C358%20256%2C353%20361%2C358%20361%2C362%20256%2C367%20151%2C362%27%20fill%3D%27%23d4a855%27%2F%3E%3C%2Fsvg%3E">
     <style>
-        /* Hero */
-        .law-hero {
-            background: var(--navy);
-            padding: 4rem 2rem;
-            text-align: center;
-            border-bottom: 3px solid var(--gold);
+        /* ---------- Shared section shell (matches index.html) ---------- */
+        .section {
+            padding: 5rem 2rem;
         }
 
-        .law-hero h1 {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            font-family: 'Georgia', serif;
-        }
-
-        .law-hero p {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: var(--white);
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        /* Generic section wrapper */
-        .law-section {
-            padding: 4rem 2rem;
-        }
-
-        .law-section.bg-gray {
-            background: var(--light-gray);
-        }
-
-        .law-section-inner {
-            max-width: 1100px;
+        .section-content {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .law-section h2 {
-            color: var(--navy);
-            font-size: 2.25rem;
-            text-align: center;
-            margin-bottom: 2.5rem;
-            font-family: 'Georgia', serif;
-        }
+        .bg-white { background: var(--white); }
+        .bg-navy  { background: var(--navy); color: var(--white); }
 
-        /* Legal services 2x2 grid */
-        .services-grid {
+        /* ---------- Hero: white ---------- */
+        .law-hero-inner {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: 1fr 290px;
+            gap: 3.5rem;
+            align-items: center;
         }
 
-        .service-card {
-            background: var(--white);
+        .hero-logo {
+            width: 100%;
+            max-width: 460px;
+            height: auto;
+            display: block;
+            margin: 0 0 2rem;
+        }
+
+        .law-hero-inner p {
+            font-size: 1.15rem;
+            line-height: 1.85;
+            color: var(--text);
+            max-width: 60ch;
+            margin: 0 0 2rem;
+        }
+
+        .hero-portrait { margin: 0; }
+
+        .hero-portrait img {
+            width: 100%;
+            display: block;
             border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0;
-            border-top: 4px solid var(--gold);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ---------- Buttons ---------- */
+        .consult-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--navy);
+            background: var(--navy);
+            color: var(--gold);
             transition: all 0.3s;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        }
-
-        .service-card h3 {
+        .consult-button:hover,
+        .consult-button:focus-visible {
+            background: var(--white);
             color: var(--navy);
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            font-family: 'Georgia', serif;
-            line-height: 1.3;
         }
 
-        .service-card p {
-            color: var(--text);
-            font-size: 1rem;
-            line-height: 1.7;
+        .bg-navy .consult-button {
+            background: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
         }
 
-        /* Areas of expertise list */
-        .expertise-list {
-            list-style: none;
+        .bg-navy .consult-button:hover,
+        .bg-navy .consult-button:focus-visible {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* ---------- Service sections ---------- */
+        .band-inner {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem 2.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
+            grid-template-columns: 1fr 400px;
+            gap: 3.5rem;
+            align-items: start;
         }
 
-        .expertise-list li {
+        .section.reverse .band-inner {
+            grid-template-columns: 400px 1fr;
+        }
+
+        .section.reverse .band-photos { order: -1; }
+
+        .band-copy h2 {
+            font-size: 2.4rem;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            line-height: 1.25;
+            color: var(--navy);
+        }
+
+        .bg-navy .band-copy h2 { color: var(--gold); }
+
+        /* the rule under each heading tapers, the way the logo's does */
+        .band-copy h2::after {
+            content: "";
+            display: block;
+            width: 4.5rem;
+            height: 7px;
+            margin-top: 0.9rem;
+            background: var(--gold);
+            clip-path: polygon(0 38%, 50% 0, 100% 38%, 100% 62%, 50% 100%, 0 62%);
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 0;
+            columns: 2;
+            column-gap: 2.5rem;
+        }
+
+        .service-list li {
             position: relative;
-            padding-left: 1.75rem;
-            font-size: 1.05rem;
-            line-height: 1.6;
+            padding-left: 1.6rem;
+            margin-bottom: 0.85rem;
+            font-size: 1rem;
+            line-height: 1.55;
             color: var(--text);
+            break-inside: avoid;
         }
 
-        .expertise-list li::before {
+        .bg-navy .service-list li { color: var(--white); }
+
+        .service-list li::before {
             content: "\2713";
             position: absolute;
             left: 0;
@@ -115,56 +151,72 @@
             font-weight: bold;
         }
 
-        /* Discuss / CTA */
-        .discuss {
-            text-align: center;
+        .band-photos {
+            display: grid;
+            gap: 1.75rem;
+        }
+
+        .band-photos figure { margin: 0; }
+
+        .band-photos img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ---------- Closing ---------- */
+        .discuss { text-align: center; }
+
+        .discuss-logo {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            display: block;
+            margin: 0 auto 2rem;
         }
 
         .discuss p {
             font-size: 1.15rem;
             line-height: 1.8;
             color: var(--text);
-            max-width: 700px;
-            margin: 0 auto 2rem;
+            max-width: 56ch;
+            margin: 0 auto 2.25rem;
         }
 
-        .email-button {
-            display: inline-block;
-            background: var(--navy);
-            color: var(--gold);
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.05rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid var(--navy);
+        .disclaimer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 3rem;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #6b6b6b;
         }
 
-        .email-button:hover {
-            background: var(--white);
-            color: var(--navy);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .law-hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .services-grid {
+        /* ---------- Responsive ---------- */
+        @media (max-width: 968px) {
+            .law-hero-inner,
+            .band-inner,
+            .section.reverse .band-inner {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
 
-            .expertise-list {
-                grid-template-columns: 1fr;
-            }
+            .section.reverse .band-photos { order: 0; }
 
-            .law-section {
-                padding: 3rem 1rem;
-            }
+            .band-photos { max-width: 520px; }
+            .hero-portrait { max-width: 260px; }
+            .service-list { columns: 1; }
+            .band-copy h2 { font-size: 1.9rem; }
+            .section { padding: 3.5rem 1.5rem; }
+        }
+
+        @media (max-width: 640px) {
+            .section { padding: 3rem 1rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; }
         }
     </style>
 </head>
@@ -188,68 +240,140 @@
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="law-hero">
-        <h1>Democracy &amp; Development</h1>
-        <p>Drawing on extensive experience in government, legal practice, and community development, I offer specialized legal services to public agencies, nonprofits, community organizations, and developers. Practice areas include federal grants and tax credit compliance, community development program design, state and local finance, tax policy, procurement and other governance reforms. From negotiating contracts to drafting legislation, from incorporating cooperatives to filing ballot initiatives, we are committed to empowering communities to drive their local democracy and development agenda.</p>
+    <!-- Hero: white -->
+    <section class="section bg-white">
+        <div class="section-content law-hero-inner">
+            <div>
+                <!-- Logo is drawn inline so it can never fail to load -->
+                <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="16 -7 488 153"
+                     role="img" aria-label="Fefer Law — Democracy and Development">
+                    <text x="260" y="62" text-anchor="middle" font-family="Georgia, 'Times New Roman', Times, serif" font-size="60" letter-spacing="6" fill="#1a3a52">FEFER LAW</text>
+                    <polygon points="42,87.2 260,84.8 478,87.2 478,88.8 260,91.2 42,88.8" fill="#d4a855"/>
+                    <text x="260" y="120" text-anchor="middle" font-family="Georgia, 'Times New Roman', Times, serif" font-size="19.5" letter-spacing="4.8" fill="#1a3a52">DEMOCRACY &amp; DEVELOPMENT</text>
+                </svg>
+                <p>Drawing on extensive experience in government, legal practice, and community development, I offer specialized legal services to public agencies, nonprofits, community organizations, and developers.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWEOTXBH3gRJFVlqP-1sP2jvE66C-osj0Kvl6TWBBZljqbzQ/viewform" class="consult-button" target="_blank" rel="noopener">Book a Consultation</a>
+            </div>
+            <figure class="hero-portrait">
+                <img src="https://lh3.googleusercontent.com/d/1PjA6PPEKya2g33BH05YXgPh_glURlIy2=w900"
+                     alt="Nahuel S. Fefer" loading="lazy">
+            </figure>
+        </div>
     </section>
 
-    <!-- Legal Services -->
-    <section class="law-section">
-        <div class="law-section-inner">
-            <h2>Legal Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Public Policy, Regulatory &amp; Government Affairs</h3>
-                    <p>Drafting and analysis of ordinances, resolutions, and policy proposals. Experience with charter, procurement, and civil service reform as well as affordable housing, development and incentive policy.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Housing Development</h3>
-                    <p>Structuring complex capital stacks, drafting agreements, providing compliance guidance, and representing developers in order to secure funding and build quality housing. Assistance with tax credits, incentives &amp; federal grants compliance.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Community Development Law</h3>
-                    <p>Guidance on federal community development programs, CDBG compliance, HOME regulations, and navigating HUD requirements. Assistance with consolidated planning, environmental reviews, and program design.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Training &amp; Technical Assistance</h3>
-                    <p>Workshops, presentations, and training sessions on community development law, local government processes, and policy advocacy. Technical assistance and capacity building for community development organizations.</p>
-                </div>
+    <!-- Nonprofits: navy -->
+    <section class="section bg-navy" id="nonprofits">
+        <div class="section-content band-inner">
+            <div class="band-copy">
+                <h2>Legal Services for Nonprofits &amp; Community Organizations</h2>
+                <ul class="service-list">
+                    <li>Incorporation and 501(c)(3) or 501(c)(4) formation</li>
+                    <li>Bylaws, board policies and conflict of interest procedures</li>
+                    <li>Grant application review and strategy</li>
+                    <li>Grant agreement review and negotiation</li>
+                    <li>Compliance consultation</li>
+                    <li>Financial management, procurement and personnel policies</li>
+                    <li>Real estate acquisition, leasing and disposition</li>
+                    <li>Program design and funding strategy</li>
+                    <li>Contracting with public agencies</li>
+                    <li>Ballot initiative and referendum drafting and filing</li>
+                    <li>Ballot committee formation and campaign finance reporting</li>
+                    <li>Coalition agreements and memoranda of understanding</li>
+                    <li>Policy platform drafting and advocacy strategy</li>
+                    <li>Training and technical assistance</li>
+                </ul>
+            </div>
+            <div class="band-photos">
+                <figure>
+                    <img src="https://lh3.googleusercontent.com/d/1udpVQihb5s3En_mAmk8KWWn5MgomXaBy=w1200"
+                         alt="Nahuel Fefer presenting a capacity building funding opportunity to community organizations."
+                         loading="lazy">
+                </figure>
+                <figure>
+                    <img src="https://lh3.googleusercontent.com/d/1Nlwo78BdRFJCwLBuNMUzFQr-wf54_Imp=w1200"
+                         alt="Nahuel Fefer presenting a grant to an early childcare center, children playing in the foreground."
+                         loading="lazy">
+                </figure>
             </div>
         </div>
     </section>
 
-    <!-- Areas of Expertise -->
-    <section class="law-section bg-gray">
-        <div class="law-section-inner">
-            <h2>Areas of Expertise</h2>
-            <ul class="expertise-list">
-                <li>Community Development Block Grant (CDBG) program</li>
-                <li>HOME Investment Partnerships Program</li>
-                <li>Tax Increment Financing (TIF) and other tax incentive tools</li>
-                <li>Low Income Housing Tax Credits (LIHTC) and other tax credit tools (i.e. Historic &amp; Neighborhood Preservation Tax Credits)</li>
-                <li>Affordable housing development and preservation</li>
-                <li>Vacancy reduction and land use strategies</li>
-                <li>Community engagement and participatory planning</li>
-                <li>Economic development and equitable growth</li>
-                <li>Local government budget and fiscal analysis</li>
-                <li>Legislative drafting and policy advocacy</li>
-                <li>Public procurement and contract negotiation</li>
-            </ul>
+    <!-- Developers: white -->
+    <section class="section bg-white reverse" id="developers">
+        <div class="section-content band-inner">
+            <div class="band-copy">
+                <h2>Legal Services for Developers</h2>
+                <ul class="service-list">
+                    <li>Capital stack structuring and gap financing strategy</li>
+                    <li>Housing development consultation</li>
+                    <li>Low Income Housing, Historic, New Markets and other Tax Credits</li>
+                    <li>Layering HOME, CDBG and other public sources</li>
+                    <li>Tax Increment Financing, abatement and redevelopment agreements</li>
+                    <li>Purchase and sale agreements, ground leases and easements</li>
+                    <li>Entity formation, joint venture and operating agreements</li>
+                    <li>Davis-Bacon, Section 3, URA and fair housing compliance</li>
+                    <li>Deeds of trust, land use restriction agreements, and long-term compliance with affordability covenants</li>
+                    <li>Construction contracts, disbursing agreements and draw requests</li>
+                    <li>Closing coordination</li>
+                </ul>
+            </div>
+            <div class="band-photos">
+                <figure>
+                    <img src="https://lh3.googleusercontent.com/d/1Hq3M53KtYk22mQ1DhRaJ9s8na5I6TYdJ=w1200"
+                         alt="Nahuel Fefer at work on a development project." loading="lazy">
+                </figure>
+            </div>
         </div>
     </section>
 
-    <!-- Let's Discuss Your Needs -->
-    <section class="law-section">
-        <div class="law-section-inner discuss">
-            <h2>Let's Discuss Your Needs</h2>
-            <p>Interested in working together? Reach out to discuss how I can support your organization.</p>
-            <a href="mailto:nahuel.s.fefer@gmail.com" class="email-button">Email Me</a>
+    <!-- Government: navy -->
+    <section class="section bg-navy" id="government">
+        <div class="section-content band-inner">
+            <div class="band-copy">
+                <h2>Legal Services for Government</h2>
+                <ul class="service-list">
+                    <li>Federal grants compliance: CDBG, HOME, ARPA and others</li>
+                    <li>Policy design consultation</li>
+                    <li>Uniform Guidance interpretation and application</li>
+                    <li>Single audit readiness, findings and corrective action plans</li>
+                    <li>Consolidated Plans, Annual Action Plans and Consolidated Annual Performance and Evaluation Reports</li>
+                    <li>Environmental review</li>
+                    <li>Subrecipient agreements, monitoring and grant closeout</li>
+                    <li>Compliance manuals, policies and procedures</li>
+                    <li>Legislative drafting: ordinances, resolutions and appropriations</li>
+                    <li>Charter amendment and ballot measure drafting</li>
+                    <li>Charter, civil service, procurement and other good government reforms</li>
+                    <li>Election administration and voting method reform</li>
+                    <li>Testimony and public hearing support</li>
+                    <li>Incentive policy and agreements</li>
+                    <li>Interim counsel and legal support</li>
+                    <li>Staff training and technical assistance</li>
+                </ul>
+            </div>
+            <div class="band-photos">
+                <!-- TODO: replace this alt text once you confirm what the photo shows -->
+                <figure>
+                    <img src="https://lh3.googleusercontent.com/d/1FA3LG_xjV6FOxYM-gtxClbzQqIeP8WWo=w1200"
+                         alt="Nahuel Fefer at work in local government." loading="lazy">
+                </figure>
+            </div>
         </div>
     </section>
+
+    <!-- Closing: navy -->
+    <section class="section bg-white discuss">
+        <div class="section-content">
+            <svg class="discuss-logo" xmlns="http://www.w3.org/2000/svg" viewBox="21 -7 478 122"
+                 role="img" aria-label="Fefer Law">
+                <text x="260" y="62" text-anchor="middle" font-family="Georgia, 'Times New Roman', Times, serif" font-size="60" letter-spacing="6" fill="#1a3a52">FEFER LAW</text>
+                <polygon points="47,83.3 260,81.2 473,83.3 473,84.7 260,86.8 47,84.7" fill="#d4a855"/>
+            </svg>
+            <p>Tell me what you&rsquo;re working on and I&rsquo;ll tell you whether I&rsquo;m the right person to help, and do my best to point you in the right direction if not.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWEOTXBH3gRJFVlqP-1sP2jvE66C-osj0Kvl6TWBBZljqbzQ/viewform" class="consult-button" target="_blank" rel="noopener">Book a Consultation</a>
+        </div>
+    </section>
+
+    <p class="disclaimer"><strong>Disclaimer:</strong> The information on this website is for general informational purposes only and does not create an attorney-client relationship. Attorney Nahuel S. Fefer is licensed in Missouri and does not provide legal representation or advice regarding state-specific laws outside of Missouri. For personalized advice please schedule a consultation. Please do not share confidential information until an attorney-client relationship has been established. Such a relationship only arises after a formal, signed engagement agreement.</p>
 
     <!-- Footer -->
     <footer class="footer">
@@ -269,7 +393,7 @@
             <div class="footer-section">
                 <h3>Contact</h3>
                 <div class="footer-contact">
-                    <p>Email: <a href="mailto:nahuel.s.fefer@gmail.com">nahuel.s.fefer@gmail.com</a></p>
+                    <p>Email: <a href="mailto:nahuel@feferlaw.com">nahuel@feferlaw.com</a></p>
                 </div>
             </div>
         </div>
