@@ -1,216 +1,66 @@
 <!DOCTYPE html>
-<!-- VERSION: JAN17-MOBILE-FIXED-V2 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Nahuel S. Fefer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20512%20512%27%3E%3Crect%20width%3D%27512%27%20height%3D%27512%27%20fill%3D%27%231a3a52%27%2F%3E%3Ctext%20x%3D%27256%27%20y%3D%27308%27%20text-anchor%3D%27middle%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%27250%27%20fill%3D%27%23ffffff%27%3EF%3C%2Ftext%3E%3Cpolygon%20points%3D%27151%2C358%20256%2C353%20361%2C358%20361%2C362%20256%2C367%20151%2C362%27%20fill%3D%27%23d4a855%27%2F%3E%3C%2Fsvg%3E">
     <style>
-        /* Header matching landing page */
-        .header {
-            background: var(--navy);
-            color: var(--white);
-            padding: 2rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--gold);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-left h1 {
-            font-family: 'Georgia', serif;
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 0.3rem;
-            font-weight: normal;
-            letter-spacing: 0.5px;
-        }
-
-        .header-left p {
-            font-size: 1.05rem;
-            color: var(--white);
-            font-style: italic;
-        }
-
-        nav {
-            flex-shrink: 0;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--gold);
-            font-family: 'Georgia', serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--white);
-        }
-
-        /* Contact Title Section */
-        .contact-title {
-            padding: 3rem 2rem 2rem 2rem;
-            text-align: center;
-        }
-
-        .contact-title h1 {
-            font-size: 2.5rem;
-            color: var(--navy);
-            font-family: 'Georgia', serif;
-            margin: 0;
-            font-weight: bold;
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                padding: 1.5rem 1rem;
-                gap: 1rem;
-                align-items: flex-start;
-            }
-
-            .header-left h1 {
-                font-size: 2rem;
-            }
-
-            .header-left p {
-                font-size: 0.95rem;
-            }
-
-            .nav-menu {
-                flex-wrap: wrap;
-                gap: 1rem;
-                justify-content: flex-start;
-            }
-
-            .nav-menu a {
-                font-size: 0.95rem;
-            }
-
-            .contact-title h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-left h1 {
-                font-size: 1.6rem;
-            }
-
-            .nav-menu {
-                gap: 0.75rem;
-            }
-
-            .nav-menu a {
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Contact Hero */
-        .contact-hero {
-            background: var(--navy);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .contact-hero h1 {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            font-family: 'Georgia', serif;
-        }
-
-        .contact-hero p {
-            font-size: 1.2rem;
-            color: var(--white);
-        }
-
-        .contact-content {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
         .contact-section {
+            padding: 4rem 2rem;
             background: var(--white);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
+        }
+
+        .contact-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid var(--gold);
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 3rem 3.5rem;
         }
 
-        .contact-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        .contact-card h2 {
+            font-size: 2.5rem;
             color: var(--navy);
-            border: none;
-            display: block;
+            text-align: center;
+            margin: 0 0 2rem;
+            font-family: 'Georgia', serif;
         }
 
-        .contact-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+        .contact-card p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text);
+            margin: 0;
         }
 
-        .contact-link {
-            font-size: 1.2rem;
-            color: var(--primary);
-            text-decoration: none;
+        .contact-card a {
+            color: var(--navy);
             font-weight: 600;
         }
 
-        .contact-link:hover {
-            color: var(--accent);
+        .contact-card a:hover {
+            color: var(--gold);
         }
 
-        .social-links {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1.5rem;
+        .disclaimer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 2rem 3rem;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #6b6b6b;
         }
 
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            background: var(--navy);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-        }
-
-        .social-link:hover {
-            background: var(--accent);
-            color: var(--navy);
-            transform: translateY(-2px);
-        }
-
-        .action-section {
-            background: var(--light-gray);
-            padding: 2.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--navy);
+        @media (max-width: 640px) {
+            .contact-section { padding: 2.5rem 1rem; }
+            .contact-card { padding: 2rem 1.5rem; }
+            .contact-card h2 { font-size: 1.9rem; }
+            .contact-card p { font-size: 1.05rem; }
         }
     </style>
 </head>
@@ -222,7 +72,7 @@
             <p>Attorney / Professor / Public Servant</p>
         </div>
         <nav>
-                        <ul class="nav-menu">
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">Bio</a></li>
                 <li><a href="fefer-law.html">Fefer Law</a></li>
@@ -234,32 +84,21 @@
         </nav>
     </header>
 
-    <!-- Contact Content -->
-    <div class="contact-content">
-        <div class="contact-section" style="max-width: 800px; margin: 0 auto; padding: 2.5rem;">
-            <h2 style="color: var(--navy); margin-bottom: 1rem; font-size: 2rem; text-align: center;">Let's Connect!</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; text-align: left;">
-                I love meeting people working towards a better world and sharing insights and lessons learned from my work. Whether you have questions about my research, are interested in working together on structural reforms, need help drafting legislation, want to collaborate on an academic project, or have other inquiries (legal work, consulting opportunities, media requests, etc.) please e-mail me directly at <a href="mailto:nahuel.s.fefer@gmail.com" style="color: var(--navy); font-weight: 600; text-decoration: underline;">nahuel.s.fefer@gmail.com</a>.
-            </p>
+    <section class="contact-section">
+        <div class="contact-card">
+            <h2>Let's Connect!</h2>
+            <p>I love meeting people working towards a better world and sharing insights and lessons learned from my work. If you&rsquo;re a prospective client, start with the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWEOTXBH3gRJFVlqP-1sP2jvE66C-osj0Kvl6TWBBZljqbzQ/viewform" target="_blank" rel="noopener">consultation form</a> &mdash; it asks the things I&rsquo;d ask anyway, so the first conversation can begin somewhere useful. For anything else, whether that&rsquo;s a question about my research, a media request, or a proposal to work together on a project, please email me at <a href="mailto:nahuel@feferlaw.com">nahuel@feferlaw.com</a>.</p>
         </div>
+    </section>
 
-        <div class="contact-section" style="text-align: center; margin-top: 3rem;">
-            <h2 style="color: var(--navy); margin-bottom: 1rem; font-size: 2rem;">Subscribe for Updates</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 0 auto 2rem;">
-                Sign up here to get notified when I publish new writing:
-            </p>
-            <div style="display: flex; justify-content: center;">
-                <iframe src="https://nahuelfefer.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-            </div>
-        </div>
-    </div>
+    <p class="disclaimer"><strong>Disclaimer:</strong> The information on this website is for general informational purposes only and does not create an attorney-client relationship. Attorney Nahuel S. Fefer is licensed in Missouri and does not provide legal representation or advice regarding state-specific laws outside of Missouri. For personalized advice please schedule a consultation. Please do not share confidential information until an attorney-client relationship has been established. Such a relationship only arises after a formal, signed engagement agreement.</p>
 
-                <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Site Map</h3>
-                                <div class="footer-nav">
+                <div class="footer-nav">
                     <a href="index.html">Home</a>
                     <a href="about.html">Bio</a>
                     <a href="fefer-law.html">Fefer Law</a>
@@ -272,7 +111,7 @@
             <div class="footer-section">
                 <h3>Contact</h3>
                 <div class="footer-contact">
-                    <p>Email: <a href="mailto:nahuel.s.fefer@gmail.com">nahuel.s.fefer@gmail.com</a></p>
+                    <p>Email: <a href="mailto:nahuel@feferlaw.com">nahuel@feferlaw.com</a></p>
                 </div>
             </div>
         </div>
